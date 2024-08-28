@@ -1,0 +1,7 @@
+node_modules/
+tailwind.config.js
+site.webmanifest
+README.md
+LICENSE
+package.json
+package-lock.json
