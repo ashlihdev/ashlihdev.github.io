@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASHLIH DEV</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      /* SECTION */
+      /* SECTION BACKGROUND — MATCH HERO */
+      .faq-section {
+        padding: 90px 20px;
+      }
+
+      /* CONTAINER */
+      .faq-container {
+        max-width: 760px;
+        margin: auto;
+      }
+
+      /* TITLE */
+      .faq-title {
+        font-size: 2.1rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 50px;
+
+        color: #0f172a;
+      }
+
+      /* WRAPPER */
+      .faq-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      /* ITEM CARD */
+      .faq-item {
+        padding: 18px 22px;
+
+        border-radius: 14px;
+
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(14px);
+
+        border: 1px solid rgba(148, 163, 184, 0.25);
+
+        transition: 0.3s ease;
+      }
+
+      /* HOVER EFFECT */
+      .faq-item:hover {
+        border-color: rgba(59, 130, 246, 0.4);
+        transform: translateY(-2px);
+      }
+
+      /* SUMMARY */
+      .faq-item summary {
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.05rem;
+
+        color: #0f172a;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* REMOVE DEFAULT MARKER */
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      /* CUSTOM ARROW */
+      .faq-item summary::after {
+        content: "▾";
+        font-size: 1.3rem;
+        transition: 0.3s ease;
+
+        color: #3b82f6;
+      }
+
+      .faq-item[open] summary::after {
+        transform: rotate(180deg);
+      }
+
+      /* CONTENT */
+      .faq-item p {
+        margin-top: 14px;
+        line-height: 1.7;
+
+        color: #475569;
+      }
+
+      /* SECTION BACKGROUND — SAME AS HERO */
+      .brands-marquee-section {
+        padding: 70px 0;
+
+        background:
+          radial-gradient(
+            circle at 20% 30%,
+            rgba(59, 130, 246, 0.15),
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(59, 130, 246, 0.1),
+            transparent 40%
+          ),
+          #f8fafc;
+      }
+
+      /* CONTAINER */
+      .brands-container {
+        max-width: 1100px;
+        margin: auto;
+        text-align: center;
+      }
+
+      /* LABEL */
+      .brands-label {
+        font-size: 0.9rem;
+        color: #64748b;
+        margin-bottom: 30px;
+      }
+
+      /* MARQUEE WRAPPER */
+      .marquee {
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* FADE EDGE EFFECT (Premium Touch) */
+      .marquee::before,
+      .marquee::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 120px;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .marquee::before {
+        left: 0;
+        background: linear-gradient(to right, #f8fafc, transparent);
+      }
+
+      .marquee::after {
+        right: 0;
+        background: linear-gradient(to left, #f8fafc, transparent);
+      }
+
+      /* TRACK */
+      .marquee-track {
+        display: flex;
+        gap: 60px;
+        width: max-content;
+
+        animation: marqueeScroll 25s linear infinite;
+      }
+
+      /* PAUSE ON HOVER */
+      .marquee:hover .marquee-track {
+        animation-play-state: paused;
+      }
+
+      /* LOGO */
+      .marquee-track img {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: 0.3s ease;
+      }
+
+      .marquee-track img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: scale(1.08);
+      }
+
+      /* ANIMATION */
+      @keyframes marqueeScroll {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* SECTION BACKGROUND */
+      .featured-projects {
+        padding: 100px 20px;
+
+        background:
+          radial-gradient(
+            circle at 10% 20%,
+            rgba(59, 130, 246, 0.15),
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(59, 130, 246, 0.08),
+            transparent 40%
+          ),
+          #f8fafc;
+      }
+
+      .dark .featured-projects {
+        background:
+          radial-gradient(
+            circle at 10% 20%,
+            rgba(59, 130, 246, 0.2),
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(59, 130, 246, 0.15),
+            transparent 40%
+          ),
+          #020617;
+      }
+
+      /* CONTAINER */
+      .projects-container {
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      /* TITLE */
+      .projects-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 10px;
+
+        color: #0f172a;
+      }
+
+      .dark .projects-title {
+        color: #f1f5f9;
+      }
+
+      /* SUBTITLE */
+      .projects-subtitle {
+        text-align: center;
+        color: #64748b;
+        margin-bottom: 80px;
+        font-size: 1.1rem;
+      }
+
+      .dark .projects-subtitle {
+        color: #94a3b8;
+      }
+
+      /* PROJECT ITEM */
+      .project-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin-bottom: 90px;
+      }
+
+      /* Reverse Layout */
+      .project-item.reverse .project-image {
+        order: 2;
+      }
+
+      .project-item.reverse .project-content {
+        order: 1;
+      }
+
+      /* IMAGE */
+      .project-image img {
+        width: 100%;
+        border-radius: 18px;
+
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+
+        transition: 0.4s ease;
+      }
+
+      .project-image img:hover {
+        transform: translateY(-6px);
+      }
+
+      /* CONTENT */
+      .project-content h3 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+        color: #0f172a;
+      }
+
+      .dark .project-content h3 {
+        color: #e2e8f0;
+      }
+
+      .project-content p {
+        color: #64748b;
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+
+      .dark .project-content p {
+        color: #94a3b8;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        .project-item {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .project-item.reverse .project-image,
+        .project-item.reverse .project-content {
+          order: unset;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-50 text-slate-800">
+    <!-- ================= HEADER ================= -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <h1 class="font-bold text-lg text-blue-600">ASHLIH DEV</h1>
+
+        <nav class="hidden md:flex gap-6 text-sm">
+          <a href="#" class="hover:text-blue-600">Home</a>
+          <a href="#portfolio" class="hover:text-blue-600">Portfolio</a>
+          <a href="#services" class="hover:text-blue-600">Services</a>
+          <a href="#contact" class="hover:text-blue-600">Contact</a>
+        </nav>
+
+        <div class="flex gap-3">
+          <a
+            href="#contact"
+            class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition"
+          >
+            Diskusi Project
+          </a>
+
+          <button id="menuBtn" class="md:hidden border p-2 rounded-lg">
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
+        <nav class="flex flex-col px-6 py-4 gap-4">
+          <a href="#">Home</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <script>
+      menuBtn.onclick = () => mobileMenu.classList.toggle("hidden");
+    </script>
+
+    <!-- ================= HERO ================= -->
+    <section
+      class="relative bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 text-white"
+    >
+      <div class="max-w-7xl mx-auto px-6 py-24">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- LEFT -->
+          <div>
+            <span
+              class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 text-sm rounded-full bg-white/10 text-blue-200"
+            >
+              ⭐ Custom Business System Specialist
+            </span>
+
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+              Buat Aplikasi Web & Mobile Apps <br />
+              Untuk Bisnis Anda
+            </h1>
+
+            <p class="text-blue-100 max-w-xl mb-8">
+              Kami membangun aplikasi web dan mobile yang powerful, scalable,
+              dan memberikan pengalaman pengguna terbaik untuk bisnis Anda.
+            </p>
+
+            <div class="flex gap-4">
+              <a
+                href="#portfolio"
+                class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold"
+              >
+                View Portfolio
+              </a>
+
+              <a
+                href="#contact"
+                class="border border-white px-6 py-3 rounded-full"
+              >
+                Discuss Project
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT MOCKUP -->
+          <div class="hidden lg:block">
+            <img
+              src="https://dummyimage.com/600x400/ffffff/1e40af&text=Project+Preview"
+              class="rounded-xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brands-marquee-section">
+      <div class="brands-container">
+        <p class="brands-label">Dipercaya & dikembangkan untuk:</p>
+
+        <div class="marquee">
+          <div class="marquee-track">
+            <!-- SET 1 -->
+            <img src="./images/brands-logo/mahad-bimbingan-islam.webp" alt="" />
+            <img src="./images/brands-logo/akademi-shalihah.webp" alt="" />
+            <img src="./images/brands-logo/jih.png" alt="" />
+            <img src="./images/brands-logo/aba.png" alt="" />
+            <img src="./images/brands-logo/ppi.png" alt="" />
+            <img src="./images/brands-logo/tradewithnana.webp" alt="" />
+            <img src="./images/brands-logo/wirajaya.png" alt="" />
+            <img src="./images/brands-logo/lenterasunnah.png" alt="" />
+            <img src="./images/brands-logo/sipdesa.png" alt="" />
+            <img src="./images/brands-logo/ib.png" alt="" />
+            <img src="./images/brands-logo/qn.png" alt="" />
+
+            <img src="./images/brands-logo/madrasah-diniyah.webp" alt="" />
+            <img src="./images/brands-logo/ihsan-akademi.webp" alt="" />
+            <img src="./images/brands-logo/suni.png" alt="" />
+
+            <!-- DUPLICATE SET (IMPORTANT for infinite effect) -->
+            <img src="./images/brands-logo/mahad-bimbingan-islam.webp" alt="" />
+            <img src="./images/brands-logo/akademi-shalihah.webp" alt="" />
+            <img src="./images/brands-logo/jih.png" alt="" />
+            <img src="./images/brands-logo/aba.png" alt="" />
+            <img src="./images/brands-logo/ppi.png" alt="" />
+            <img src="./images/brands-logo/tradewithnana.webp" alt="" />
+            <img src="./images/brands-logo/wirajaya.png" alt="" />
+            <img src="./images/brands-logo/lenterasunnah.png" alt="" />
+            <img src="./images/brands-logo/sipdesa.png" alt="" />
+            <img src="./images/brands-logo/ib.png" alt="" />
+            <img src="./images/brands-logo/qn.png" alt="" />
+
+            <img src="./images/brands-logo/madrasah-diniyah.webp" alt="" />
+            <img src="./images/brands-logo/ihsan-akademi.webp" alt="" />
+            <img src="./images/brands-logo/suni.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PORTFOLIO ================= -->
+    <section class="featured-projects" id="projects">
+      <div class="projects-container">
+        <h2 class="projects-title">Featured Projects</h2>
+
+        <p class="projects-subtitle">
+          Beberapa aplikasi yang kami kembangkan untuk klien.
+        </p>
+
+        <!-- PROJECT -->
+        <div class="project-item">
+          <div class="project-image">
+            <img src="./images/projects/mahad.webp" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>Mahad Bimbingan Islam LMS</h3>
+            <p>
+              LMS dengan fitur presensi, kuis, catatan, rating materi, tanya
+              jawab, dan monitoring pembelajaran.
+            </p>
+          </div>
+        </div>
+
+        <!-- PROJECT -->
+        <div class="project-item reverse">
+          <div class="project-image">
+            <img src="./images/projects/aishah.webp" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>Akademi Shalihah Analytics</h3>
+            <p>
+              Dashboard statistik untuk memonitor keaktifan siswa dengan
+              visualisasi chart interaktif.
+            </p>
+          </div>
+        </div>
+
+        <!-- PROJECT -->
+        <div class="project-item">
+          <div class="project-image">
+            <img src="./images/projects/mahad_app.webp" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>Mahad Mobile App</h3>
+            <p>
+              Aplikasi Android untuk akses materi pembelajaran, presensi, dan
+              interaksi siswa secara mobile.
+            </p>
+          </div>
+        </div>
+
+        <!-- PROJECT -->
+        <div class="project-item reverse">
+          <div class="project-image">
+            <img src="./images/projects/madeenah_app.webp" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>Madrasah Diniyah App</h3>
+            <p>
+              Aplikasi pembelajaran digital yang dapat diakses langsung melalui
+              Google Play Store.
+            </p>
+          </div>
+        </div>
+
+        <!-- PROJECT -->
+        <div class="project-item">
+          <div class="project-image">
+            <img src="./images/projects/payment_gateway.webp" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>Payment Gateway Integration</h3>
+            <p>
+              Integrasi sistem pembayaran otomatis untuk mempermudah transaksi
+              digital.
+            </p>
+          </div>
+        </div>
+
+        <!-- PROJECT -->
+        <div class="project-item reverse">
+          <div class="project-image">
+            <img src="./images/projects/invoice.webp" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>Payment & Invoice Analytics</h3>
+            <p>
+              Monitoring data pembayaran dengan statistik visual yang lengkap
+              dan mudah dipahami.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING ================= -->
+    <section id="pricing" class="py-28 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-20">
+          <h2 class="text-4xl font-bold tracking-tight mb-4">
+            Layanan Pengembangan Aplikasi
+          </h2>
+
+          <p class="text-lg">
+            Solusi digital profesional yang dirancang sesuai kebutuhan bisnis
+            Anda.
+          </p>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid lg:grid-cols-3 gap-10">
+          <!-- ================= Landing Page ================= -->
+          <div
+            class="flex flex-col p-9 bg-white border border-slate-200 rounded-2xl shadow-sm transition hover:-translate-y-2"
+          >
+            <h3 class="text-2xl font-semibold mb-2 text-slate-700">
+              Landing Page
+            </h3>
+
+            <p class="text-slate-500 mb-8 leading-relaxed">
+              Website profesional untuk meningkatkan kredibilitas brand dan
+              promosi layanan.
+            </p>
+
+            <ul class="space-y-5 mb-10">
+              <li class="flex gap-3 text-slate-700 leading-relaxed">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Desain sesuai brand identity</span>
+              </li>
+
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Struktur halaman fleksibel</span>
+              </li>
+
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Optimasi performa & SEO dasar</span>
+              </li>
+
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Cocok untuk personal branding & company profile</span>
+              </li>
+            </ul>
+
+            <a
+              href="https://wa.me/6283840011102"
+              class="mt-auto text-center bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl font-semibold transition"
+            >
+              Diskusikan Project
+            </a>
+          </div>
+
+          <!-- ================= Web App (Highlight) ================= -->
+          <div
+            class="relative flex flex-col p-10 bg-white border-2 border-blue-600 rounded-2xl shadow-xl scale-105 transition hover:-translate-y-2"
+          >
+            <span
+              class="absolute top-6 right-6 text-xs font-semibold bg-blue-100 text-blue-700 px-3 py-1 rounded-full"
+            >
+              Most Popular
+            </span>
+
+            <h3 class="text-2xl font-semibold mb-2 text-slate-700">
+              Aplikasi Web Custom
+            </h3>
+
+            <p class="text-slate-500 mb-8 leading-relaxed">
+              Pengembangan sistem bisnis seperti LMS, ERP, dashboard
+              operasional, dan integrasi API.
+            </p>
+
+            <ul class="space-y-5 mb-10">
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Dikembangkan sesuai workflow bisnis</span>
+              </li>
+
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Arsitektur scalable & maintainable</span>
+              </li>
+
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Integrasi payment gateway / API</span>
+              </li>
+
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Dashboard analitik & laporan otomatis</span>
+              </li>
+
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Technical support pasca launch</span>
+              </li>
+            </ul>
+
+            <a
+              href="https://wa.me/6283840011102"
+              class="mt-auto text-center bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl font-semibold transition"
+            >
+              Diskusikan Project
+            </a>
+          </div>
+
+          <!-- ================= Mobile App ================= -->
+          <div
+            class="flex flex-col p-9 bg-white border border-slate-200 rounded-2xl shadow-sm transition hover:-translate-y-2"
+          >
+            <h3 class="text-2xl font-semibold mb-2 text-slate-700">
+              Mobile Application
+            </h3>
+
+            <p class="text-slate-500 mb-8 leading-relaxed">
+              Pengembangan aplikasi Android & iOS dengan UI modern dan performa
+              optimal.
+            </p>
+
+            <ul class="space-y-5 mb-10">
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>UI/UX modern & user friendly</span>
+              </li>
+
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Publish Google Play Store & App Store</span>
+              </li>
+
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Integrasi backend & REST API</span>
+              </li>
+
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Arsitektur scalable & future ready</span>
+              </li>
+
+              <li class="flex gap-3 text-slate-700">
+                <span class="text-blue-600 mt-1">✔</span>
+                <span>Technical support pasca launch</span>
+              </li>
+            </ul>
+
+            <a
+              href="https://wa.me/6283840011102"
+              class="mt-auto text-center bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl font-semibold transition"
+            >
+              Diskusikan Project
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold">Services</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-xl border">
+            <h3 class="font-semibold mb-3">Web Application</h3>
+            <p class="text-slate-500 text-sm">
+              Pengembangan sistem informasi berbasis web custom.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border">
+            <h3 class="font-semibold mb-3">Mobile App</h3>
+            <p class="text-slate-500 text-sm">
+              Pembuatan aplikasi Android & iOS menggunakan Flutter.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border">
+            <h3 class="font-semibold mb-3">System Integration</h3>
+            <p class="text-slate-500 text-sm">
+              Integrasi API, payment gateway, dan workflow automation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section id="contact" class="py-24 bg-blue-900 text-white text-center">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4">Have a Project Idea?</h2>
+
+        <p class="text-blue-200 mb-8">
+          Mari diskusikan kebutuhan aplikasi bisnis Anda.
+        </p>
+
+        <a
+          href="#"
+          class="bg-white text-blue-800 px-8 py-3 rounded-full font-semibold"
+        >
+          Contact via WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+      <div class="faq-container">
+        <h2 class="faq-title">Yang sering ditanyakan</h2>
+
+        <div class="faq-wrapper">
+          <details class="faq-item" open>
+            <summary>Berapa biaya untuk membuat web?</summary>
+            <p>
+              Biaya membuat website tentu berbeda-beda, tergantung jenis webnya
+              (tingkat kesulitan, waktu yang dibutuhkan untuk mengerjakan), tapi
+              kira-kira range-nya mulai dari 300 ribu hingga jutaan rupiah.
+              Untuk lembaga non-profit, terutama yang bergerak di bidang
+              pendidikan, insya Allah akan diberikan harga yang lebih murah.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Berapa waktu yang dibutuhkan untuk membuat web?</summary>
+            <p>
+              Lama waktu pengerjaan mulai beberapa hari saja hingga 3-4 bulan
+              tergantung banyaknya fitur dan tingkat kesulitan.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              Setelah web jadi, apakah perlu maintenance/perawatan?
+            </summary>
+            <p>
+              Secara umum tidak. Apabila web sudah jadi dan tidak ditemukan
+              bug/error, maka sejatinya tidak perlu perawatan khusus.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              Bagaimana prosedur pembuatan aplikasi web atau aplikasi mobile
+              dari awal hingga akhir?
+            </summary>
+            <p>
+              Ceritakan kebutuhan kamu dulu ya. Nanti kita diskusikan desain
+              aplikasinya agar mendapatkan hasil terbaik sesuai kebutuhan kamu.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
+      © 2026 ASHLIH DEV
+    </footer>
+  </body>
+</html>

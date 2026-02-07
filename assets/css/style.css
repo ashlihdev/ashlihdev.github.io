@@ -1,0 +1,213 @@
+/* =====================
+   THEME VARIABLES
+===================== */
+
+:root {
+  --bg-main: #ffffff;
+  --bg-secondary: #f7f7f7;
+  --text-main: #1a1a1a;
+  --text-muted: #666;
+  --border-color: #eee;
+  --accent: #000000;
+  --accent-text: #ffffff;
+}
+
+/* DARK MODE */
+[data-theme="dark"] {
+  --bg-main: #0f172a;
+  --bg-secondary: #111827;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-color: #1f2937;
+  --accent: #ffffff;
+  --accent-text: #000000;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  transition: 0.3s;
+}
+
+/* LAYOUT */
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.bg-light {
+  background: var(--bg-secondary);
+}
+
+/* NAVBAR */
+.navbar {
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-main);
+  position: sticky;
+  top: 0;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* HERO */
+.hero {
+  padding: 140px 0;
+}
+
+.hero h1 {
+  font-size: 44px;
+  margin: 20px 0;
+  line-height: 1.3;
+}
+
+.hero p {
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+/* BADGE */
+.badge {
+  background: #eee;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* BUTTON */
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.btn-outline {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+/* SECTION HEADER */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+}
+
+/* PORTFOLIO */
+.portfolio-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.project-content {
+  padding: 15px 0;
+}
+
+/* SERVICES */
+.services-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.service-card {
+  padding: 25px;
+  background: var(--bg-main);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+/* PROCESS */
+.process-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.process-step span {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* TRUST */
+.trust-wrapper {
+  text-align: center;
+}
+
+.tech-list {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+/* CTA */
+.cta {
+  padding: 100px 0;
+  background: var(--accent);
+  color: var(--accent-text);
+  text-align: center;
+}
+
+/* FOOTER */
+.footer {
+  padding: 25px 0;
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+.theme-toggle {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 20px;
+}
