@@ -1,0 +1,22 @@
+{
+  "name": "Ashlih Dev — Full Stack Product Engineer",
+  "short_name": "Ashlih Dev",
+  "description": "Build Digital Products That Scale.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#1d4ed8",
+  "icons": [
+    {
+      "src": "favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}
